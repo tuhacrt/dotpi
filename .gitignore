@@ -1,0 +1,5 @@
+context-mode
+agent/sessions
+agent/missions
+agent/run-history.jsonl
+agent/fff

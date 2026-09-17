@@ -1,0 +1,231 @@
+{
+  "providers": {
+    "kiro": {
+      "api": "anthropic-messages",
+      "apiKey": "lionel-messi-is-goat",
+      "baseUrl": "http://localhost:8000",
+      "models": [
+        {
+          "contextWindow": 1000000,
+          "id": "auto",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 64000,
+          "name": "Auto (Kiro)",
+          "reasoning": true
+        },
+        {
+          "contextWindow": 200000,
+          "id": "claude-haiku-4.5",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 64000,
+          "name": "Claude Haiku 4.5 (Kiro)",
+          "reasoning": true
+        },
+        {
+          "contextWindow": 200000,
+          "id": "claude-opus-4.5",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 64000,
+          "name": "Claude Opus 4.5 (Kiro)",
+          "reasoning": true
+        },
+        {
+          "contextWindow": 1000000,
+          "id": "claude-opus-4.6",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 64000,
+          "name": "Claude Opus 4.6 (Kiro)",
+          "reasoning": true
+        },
+        {
+          "contextWindow": 1000000,
+          "id": "claude-opus-4.7",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 128000,
+          "name": "Claude Opus 4.7 (Kiro)",
+          "reasoning": true
+        },
+        {
+          "contextWindow": 1000000,
+          "id": "claude-opus-4.8",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 128000,
+          "name": "Claude Opus 4.8 (Kiro)",
+          "reasoning": true
+        },
+        {
+          "contextWindow": 1000000,
+          "id": "claude-opus-5",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 128000,
+          "name": "Claude Opus 5 (Kiro)",
+          "reasoning": true
+        },
+        {
+          "contextWindow": 200000,
+          "id": "claude-sonnet-4",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 64000,
+          "name": "Claude Sonnet 4 (Kiro)",
+          "reasoning": true
+        },
+        {
+          "contextWindow": 200000,
+          "id": "claude-sonnet-4.5",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 64000,
+          "name": "Claude Sonnet 4.5 (Kiro)",
+          "reasoning": true
+        },
+        {
+          "contextWindow": 1000000,
+          "id": "claude-sonnet-4.6",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 64000,
+          "name": "Claude Sonnet 4.6 (Kiro)",
+          "reasoning": true
+        },
+        {
+          "contextWindow": 1000000,
+          "id": "claude-sonnet-5",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 64000,
+          "name": "Claude Sonnet 5 (Kiro)",
+          "reasoning": true
+        },
+        {
+          "contextWindow": 164000,
+          "id": "deepseek-3.2",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 64000,
+          "name": "Deepseek v3.2 (Kiro)",
+          "reasoning": true
+        },
+        {
+          "contextWindow": 200000,
+          "id": "glm-5",
+          "input": [
+            "text"
+          ],
+          "maxTokens": 64000,
+          "name": "GLM 5 (Kiro)",
+          "reasoning": true
+        },
+        {
+          "contextWindow": 272000,
+          "id": "gpt-5.6-luna",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 128000,
+          "name": "GPT 5.6 Luna (Kiro)",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "xhigh": "xhigh",
+            "max": "max"
+          }
+        },
+        {
+          "contextWindow": 272000,
+          "id": "gpt-5.6-sol",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 128000,
+          "name": "GPT 5.6 Sol (Kiro)",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "xhigh": "xhigh",
+            "max": "max"
+          }
+        },
+        {
+          "contextWindow": 272000,
+          "id": "gpt-5.6-terra",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 128000,
+          "name": "GPT 5.6 Terra (Kiro)",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "xhigh": "xhigh",
+            "max": "max"
+          }
+        },
+        {
+          "contextWindow": 196000,
+          "id": "minimax-m2.1",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 64000,
+          "name": "MiniMax M2.1 (Kiro)",
+          "reasoning": true
+        },
+        {
+          "contextWindow": 196000,
+          "id": "minimax-m2.5",
+          "input": [
+            "text"
+          ],
+          "maxTokens": 64000,
+          "name": "MiniMax M2.5 (Kiro)",
+          "reasoning": true
+        },
+        {
+          "contextWindow": 256000,
+          "id": "qwen3-coder-next",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 64000,
+          "name": "Qwen3 Coder Next (Kiro)",
+          "reasoning": true
+        }
+      ],
+      "name": "Kiro Gateway"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "context-mode": {
+      "command": "context-mode"
+    },
+    "headroom": {
+      "args": [
+        "mcp",
+        "serve"
+      ],
+      "command": "headroom",
+      "lifecycle": "keep-alive",
+      "directTools": true
+    }
+  }
+}
