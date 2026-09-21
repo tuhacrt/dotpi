@@ -1,5 +1,5 @@
 {
-  "defaultModel": "gpt-5.6-luna",
+  "defaultModel": "glm-5.3-flash",
   "defaultProvider": "polymer-aigw",
   "defaultThinkingLevel": "high",
   "enableInstallTelemetry": false,
@@ -7,11 +7,14 @@
     "kiro/auto",
     "kiro/claude-opus-5",
     "kiro/claude-sonnet-5",
-    "polymer-aigw/gpt-5.6-luna",
-    "polymer-aigw/gpt-6-astra"
+    "kiro/claude-fable-5.1",
+    "polymer-aigw/glm-5.3-flash",
+    "polymer-aigw/gpt-6-astra",
+    "polymer-aigw/glm-5.3-flash"
   ],
   "fullscreenScrollbar": "always",
-  "lastChangelogVersion": "0.84.0",
+  "hideThinkingBlock": true,
+  "lastChangelogVersion": "0.86.1",
   "packages": [
     "npm:context-mode",
     "npm:pi-footer",
@@ -19,19 +22,19 @@
     "npm:@juicesharp/rpiv-todo",
     "npm:pi-lens",
     "npm:pi-rtk-optimizer",
-    "npm:pi-subagents",
     "npm:pi-mcp-adapter",
-    "npm:@ff-labs/pi-fff"
+    "npm:@ff-labs/pi-fff",
+    "npm:pi-subagents"
   ],
   "subagents": {
     "agentOverrides": {
       "context-builder": {
-        "model": "polymer-aigw/gpt-5.6-luna",
-        "thinking": "high"
+        "model": "polymer-aigw/glm-5.3-flash",
+        "thinking": "max"
       },
       "delegate": {
-        "model": "polymer-aigw/gpt-5.6-luna",
-        "thinking": "high"
+        "model": "polymer-aigw/glm-5.3-flash",
+        "thinking": "max"
       },
       "oracle": {
         "model": "kiro/claude-opus-5",
@@ -50,12 +53,12 @@
         "thinking": "high"
       },
       "scout": {
-        "model": "polymer-aigw/gpt-5.6-luna",
-        "thinking": "high"
+        "model": "polymer-aigw/glm-5.3-flash",
+        "thinking": "max"
       },
       "worker": {
-        "model": "polymer-aigw/gpt-5.6-luna",
-        "thinking": "high"
+        "model": "polymer-aigw/glm-5.3-flash",
+        "thinking": "max"
       }
     }
   },
