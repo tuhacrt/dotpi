@@ -16,7 +16,7 @@ Default to deriving answers in a sandbox instead of reading raw bytes into your 
 - Before running a build, test suite, or any command likely to produce long output (test runners, lint, `git diff`/`git log`/`git show` on a large change, etc.), use `ctx_execute` to run it and print only the derived result.
 - Before reading a large log/file/JSON/CSV you only need to derive an answer from (not edit), use `ctx_execute_file` instead of `read`.
 - Before consuming any tool result that looks like it may be large (grep/find with many hits, verbose command output), route it through context-mode first.
-- If you still end up holding a large raw tool result you couldn't avoid this way, call `headroom_compress` on it before reasoning over it.
+- If you still end up holding a large raw tool result you couldn't avoid this way, call `headroom_compress` on it before reasoning over it, and `headroom_retrieve` with the returned hash if you later need the original.
 - Use plain `read`/`edit` normally for content you intend to modify — edits need exact matched text against the real file, so don't substitute a derived summary there.
 
 ## Search tool preference

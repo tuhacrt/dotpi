@@ -193,6 +193,29 @@
           "compat": {
             "forceAdaptiveThinking": true
           },
+          "contextWindow": 1000000,
+          "id": "claude-opus-5.5",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 128000,
+          "name": "Claude Opus 5.5 (Kiro)",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": "max",
+            "medium": "medium",
+            "minimal": "low",
+            "off": "none",
+            "xhigh": "xhigh"
+          }
+        },
+        {
+          "compat": {
+            "forceAdaptiveThinking": true
+          },
           "contextWindow": 200000,
           "id": "claude-sonnet-4",
           "input": [
@@ -481,17 +504,7 @@
             "image"
           ],
           "name": "glm-5.3-flash · Polymer AI Gateway ($0.15/$0.5 per 1M)",
-          "reasoning": true,
-          "maxTokens": 	131072,
-          "thinkingLevelMap": {
-            "high": "high",
-            "low": "low",
-            "max": "max",
-            "medium": null,
-            "minimal": null,
-            "off": null,
-            "xhigh": null
-          }
+          "reasoning": true
         },
         {
           "api": "openai-completions",
@@ -504,16 +517,7 @@
           ],
           "maxTokens": 128000,
           "name": "gpt-5.6-luna · Polymer AI Gateway ($0.22/$1.32 per 1M)",
-          "reasoning": true,
-          "thinkingLevelMap": {
-            "high": "high",
-            "low": "low",
-            "max": "max",
-            "medium": "medium",
-            "minimal": null,
-            "off": "none",
-            "xhigh": "xhigh"
-          }
+          "reasoning": true
         },
         {
           "api": "openai-completions",
@@ -526,16 +530,7 @@
           ],
           "maxTokens": 128000,
           "name": "gpt-6-astra · Polymer AI Gateway ($11/$55 per 1M)",
-          "reasoning": true,
-          "thinkingLevelMap": {
-            "high": "high",
-            "low": "low",
-            "max": "max",
-            "medium": "medium",
-            "minimal": null,
-            "off": null,
-            "xhigh": "xhigh"
-          }
+          "reasoning": true
         }
       ],
       "name": "Polymer AI Gateway"

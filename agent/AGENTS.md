@@ -6,7 +6,9 @@ Applies to every project. A project's own `AGENTS.md` overrides anything here.
 
 Done means verified, not written.
 
-- Ran the project's own build/test command and saw it pass. No run means not done.
+- Ran the project's own build/test command and saw it pass. No run means not done. A change
+  with no logic in it (docs, prose config) has nothing to run; say so rather than skipping
+  silently.
 - State what was verified and what was not. Never imply a check that did not happen.
 - No `TODO`/`FIXME` left in code just written, unless deferral was requested.
 - Scratch files, debug output, and temp scripts removed.
@@ -27,33 +29,36 @@ Never disable, skip, or weaken a test to make a suite pass.
 ## Secrets
 
 Never write a literal credential into a file or a command; reference an env var or the
-secret store. `secret-gate` blocks this at the tool boundary, and a block is a real
-finding rather than a false positive to route around. Do not echo credential values into
+secret store. The secret hook (`block_secrets.py`, run by `extensions/shared_hooks.ts`)
+blocks this at the tool boundary, and a block is a real finding rather than a false
+positive to route around. Do not echo credential values into
 the transcript, including values read out of files.
 
-`secret-gate` has a known blind spot: quoted JSON keys (`"clientSecret": "..."`) scan
-clean. Do not treat its silence as proof a file is free of credentials.
+The hook matches only a short list of known token formats and filenames, so most
+credentials (a quoted JSON `"clientSecret": "..."`, for one) scan clean. Do not treat its
+silence as proof a file is free of credentials.
 
 ## This environment
 
 Facts that a repo's own files do not reveal:
 
-- Git host is a self-hosted Gitea on an intranet (`git-ssh-intranet.polymerrisk.com`), not
-  GitHub. CI lives in `.gitea/workflows/`; a `.github/` directory here holds Copilot config.
 - No forge CLI is installed: no `gh`, `glab`, or `tea`. Do not script PR creation. Push a
-  branch and hand back the URL.
-- Only some directories under `~/i/praxis` are git repos (4 of 11). Git fails loudly there
-  (`fatal: not a git repository`, exit 128), so a sweep written as
-  `git -C "$d" ls-files 2>/dev/null || true` converts that failure into an empty file list
-  and silently skips the directory. Check `git rev-parse --git-dir` per directory and report
-  what was skipped, rather than suppressing git's error.
-- Python: `uv` is available; `poetry` and a global `pytest` are not. Check the repo before
-  assuming a runner.
+  branch and hand back the URL. Gitea's web UI is `https://git.polymerrisk.com`, not the
+  `git-ssh-intranet` host in the remote.
+- `~/i/praxis` is not a repo. Each top-level folder is either a clone or a container whose
+  clone sits at `<name>/<name>`, often with sibling folders that are git worktrees of it
+  (`polymer-praxis/{feat,fix,pfa}`). Git exits 128 on a container, so a sweep written as
+  `git -C "$d" ls-files 2>/dev/null || true` silently skips it along with the repos inside.
+  Descend one level, and report any folder that is still not a repo instead of suppressing
+  git's error.
+- `~/i/praxis/praxis-workspace` is a meta-repo with its own `AGENTS.md`. Its `repos/*` are
+  separate clones of the same remotes, so a change in `~/i/praxis/<svc>/<svc>` does not
+  appear there. Confirm which copy the task means before editing.
+- Installed: `uv`, `pnpm`, `bun`, `npm`, `dotnet`. Not installed: `poetry`, a global
+  `pytest`, `terraform`. Check the repo before assuming a runner.
 - Build and test commands are per-repo. Read that repo's `package.json`, `requirements.txt`,
   or CI config instead of assuming a shared command.
 - Some repos carry both `bun.lock` and `package-lock.json`. Ask before regenerating either.
-- `~/.pi` is itself a git repo with a remote. Treat files there as publishable: never commit
-  credentials, and check `git status` before assuming a change is local-only.
 
 <!-- kiro-setup:token-efficiency -->
 ## Token efficiency (managed by kiro-setup)
@@ -70,7 +75,7 @@ package installs). Examples:
 
 - `rtk git status` instead of `git status`
 - `rtk test <cmd>` (e.g. `rtk test npm test`) instead of the bare test command
-- `rtk build` instead of `build`
+- `rtk dotnet build`, `rtk tsc`, `rtk cargo build` instead of the bare build command
 
 Use `rtk <cmd>` over the bare command whenever the output is likely to be long.
 

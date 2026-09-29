@@ -3,3 +3,4 @@ agent/sessions
 agent/missions
 agent/run-history.jsonl
 agent/fff
+*.bak

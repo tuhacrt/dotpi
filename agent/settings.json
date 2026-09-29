@@ -1,20 +1,20 @@
 {
-  "defaultModel": "glm-5.3-flash",
-  "defaultProvider": "polymer-aigw",
+  "defaultModel": "claude-opus-5.5",
+  "defaultProvider": "kiro",
   "defaultThinkingLevel": "high",
   "enableInstallTelemetry": false,
   "enabledModels": [
     "kiro/auto",
-    "kiro/claude-opus-5",
+    "kiro/claude-opus-5.5",
     "kiro/claude-sonnet-5",
-    "kiro/claude-fable-5.1",
+    "kiro/gpt-5.6-luna",
     "polymer-aigw/glm-5.3-flash",
-    "polymer-aigw/gpt-6-astra",
-    "polymer-aigw/glm-5.3-flash"
+    "polymer-aigw/gpt-5.6-luna",
+    "polymer-aigw/gpt-6-astra"
   ],
   "fullscreenScrollbar": "always",
   "hideThinkingBlock": true,
-  "lastChangelogVersion": "0.86.1",
+  "lastChangelogVersion": "0.87.1",
   "packages": [
     "npm:context-mode",
     "npm:pi-footer",
@@ -29,36 +29,36 @@
   "subagents": {
     "agentOverrides": {
       "context-builder": {
-        "model": "polymer-aigw/glm-5.3-flash",
-        "thinking": "max"
+        "model": "kiro/claude-opus-5.5",
+        "thinking": "high"
       },
       "delegate": {
-        "model": "polymer-aigw/glm-5.3-flash",
-        "thinking": "max"
+        "model": "polymer-aigw/gpt-5.6-luna",
+        "thinking": "high"
       },
       "oracle": {
-        "model": "kiro/claude-opus-5",
+        "model": "polymer-aigw/gpt-5.6-luna",
         "thinking": "high"
       },
       "planner": {
-        "model": "kiro/claude-opus-5",
+        "model": "kiro/claude-opus-5.5",
         "thinking": "high"
       },
       "researcher": {
-        "model": "kiro/claude-opus-5",
+        "model": "kiro/claude-opus-5.5",
         "thinking": "high"
       },
       "reviewer": {
-        "model": "kiro/claude-opus-5",
+        "model": "kiro/claude-opus-5.5",
         "thinking": "high"
       },
       "scout": {
-        "model": "polymer-aigw/glm-5.3-flash",
-        "thinking": "max"
+        "model": "polymer-aigw/gpt-5.6-luna",
+        "thinking": "high"
       },
       "worker": {
-        "model": "polymer-aigw/glm-5.3-flash",
-        "thinking": "max"
+        "model": "polymer-aigw/gpt-5.6-luna",
+        "thinking": "high"
       }
     }
   },
