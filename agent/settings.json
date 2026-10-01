@@ -14,7 +14,7 @@
   ],
   "fullscreenScrollbar": "always",
   "hideThinkingBlock": true,
-  "lastChangelogVersion": "0.87.1",
+  "lastChangelogVersion": "0.99.2",
   "packages": [
     "npm:context-mode",
     "npm:pi-footer",
