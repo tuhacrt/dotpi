@@ -22,7 +22,6 @@
     "npm:@juicesharp/rpiv-todo",
     "npm:pi-lens",
     "npm:pi-rtk-optimizer",
-    "npm:pi-mcp-adapter",
     "npm:@ff-labs/pi-fff",
     "npm:pi-subagents"
   ],

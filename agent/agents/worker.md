@@ -1,7 +1,8 @@
 ---
 name: worker
 description: General-purpose subagent with full capabilities, isolated context
-tools: read, write, edit, bash, grep, find, ls, ffgrep, fffind, lens_diagnostics, subagent, contact_supervisor, subagent_supervisor, mcp:context-mode, mcp:headroom
+tools: read, write, edit, bash, grep, find, ls, ffgrep, fffind, lens_diagnostics, subagent, contact_supervisor, subagent_supervisor, ctx_execute, ctx_execute_file, ctx_batch_execute, ctx_index, ctx_search, ctx_fetch_and_index, mcp:headroom
+subagentOnlyExtensions: /home/ahsu/.pi/agent/npm/node_modules/context-mode/build/adapters/pi/extension.js, /home/ahsu/.pi/agent/npm/node_modules/@ff-labs/pi-fff/src/index.ts, /home/ahsu/.pi/agent/npm/node_modules/pi-lens/dist/index.js
 skills: subagent-tool-rules, spec-by-example, technical-research, truth-delta, clarify, constitution, dsl-refine, system-analysis
 maxSubagentDepth: 2
 allowedAgents: scout, reviewer, worker, planner
@@ -35,9 +36,9 @@ your children cannot delegate further, so hand them self-contained tasks.
 
 - Default to doing the work yourself. Delegate when the task fans out across independent
   items, or when a child's isolated context saves you from reading a lot of raw material.
-- Launch nested children async (the default). Any agent with `mcp:` tools cannot run
-  foreground, and all four (`scout`, `reviewer`, `planner`, `worker`) have them, so never
-  pass `async: false`.
+- Launch nested children async (the default). Foreground (`async: false`) also works but
+  blocks you until the child finishes, so use it only when you need the result before
+  doing anything else.
 - One writer per directory. If you delegate a nested `worker`, do not edit the files it owns
   while it runs: wait for it, or give it `worktree: true`.
 - You own the result. Verify a child's claims yourself (read the diff, run the build) before

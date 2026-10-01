@@ -4,3 +4,5 @@ agent/missions
 agent/run-history.jsonl
 agent/fff
 *.bak
+agent/pi-subagents
+agent/mcp-cache.json

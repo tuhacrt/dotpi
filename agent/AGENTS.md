@@ -81,12 +81,12 @@ Use `rtk <cmd>` over the bare command whenever the output is likely to be long.
 
 ### headroom — MCP compression tools
 
-The `headroom` MCP server exposes `headroom_compress` and `headroom_retrieve`.
-They are opt-in — call them explicitly:
+The `headroom` MCP server exposes `mcp__headroom__headroom_compress` and
+`mcp__headroom__headroom_retrieve`. They are opt-in — call them explicitly:
 
-- Call `headroom_compress` on any large tool output, file dump, search result,
+- Call `mcp__headroom__headroom_compress` on any large tool output, file dump, search result,
   or log **before** reasoning over it. It returns compacted text plus a `hash`.
-- Call `headroom_retrieve` with that `hash` when you need the full original
+- Call `mcp__headroom__headroom_retrieve` with that `hash` when you need the full original
   content back.
 
 MCP tools do not fire automatically, so prompt yourself to use them on large

@@ -1,7 +1,8 @@
 ---
 name: reviewer
 description: Code review specialist for quality and security analysis
-tools: read, grep, find, ls, bash, ffgrep, fffind, contact_supervisor, mcp:context-mode, mcp:headroom
+tools: read, grep, find, ls, bash, ffgrep, fffind, contact_supervisor, ctx_execute, ctx_execute_file, ctx_batch_execute, ctx_index, ctx_search, ctx_fetch_and_index, mcp:headroom
+subagentOnlyExtensions: /home/ahsu/.pi/agent/npm/node_modules/context-mode/build/adapters/pi/extension.js, /home/ahsu/.pi/agent/npm/node_modules/@ff-labs/pi-fff/src/index.ts
 skills: subagent-tool-rules
 inheritProjectContext: true
 ---
