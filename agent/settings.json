@@ -7,9 +7,8 @@
     "kiro/auto",
     "kiro/claude-opus-5.5",
     "kiro/claude-sonnet-5",
-    "kiro/gpt-5.6-luna",
-    "polymer-aigw/glm-5.3-flash",
     "polymer-aigw/gpt-5.6-luna",
+    "polymer-aigw/gpt-6-luna",
     "polymer-aigw/gpt-6-astra"
   ],
   "fullscreenScrollbar": "always",
@@ -32,12 +31,12 @@
         "thinking": "high"
       },
       "delegate": {
-        "model": "polymer-aigw/gpt-5.6-luna",
-        "thinking": "high"
+        "model": "polymer-aigw/gpt-6-luna",
+        "thinking": "xhigh"
       },
       "oracle": {
-        "model": "polymer-aigw/gpt-5.6-luna",
-        "thinking": "high"
+        "model": "polymer-aigw/gpt-6-luna",
+        "thinking": "xhigh"
       },
       "planner": {
         "model": "kiro/claude-opus-5.5",
@@ -52,12 +51,12 @@
         "thinking": "high"
       },
       "scout": {
-        "model": "polymer-aigw/gpt-5.6-luna",
-        "thinking": "high"
+        "model": "polymer-aigw/gpt-6-luna",
+        "thinking": "xhigh"
       },
       "worker": {
-        "model": "polymer-aigw/gpt-5.6-luna",
-        "thinking": "high"
+        "model": "polymer-aigw/gpt-6-luna",
+        "thinking": "xhigh"
       }
     }
   },

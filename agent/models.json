@@ -497,26 +497,14 @@
         {
           "api": "openai-completions",
           "baseUrl": "https://ai-gateway.polymerquant.com/v1",
-          "contextWindow": 1048576,
-          "id": "glm-5.3-flash",
-          "input": [
-            "text",
-            "image"
-          ],
-          "name": "glm-5.3-flash · Polymer AI Gateway ($0.15/$0.5 per 1M)",
-          "reasoning": true
-        },
-        {
-          "api": "openai-completions",
-          "baseUrl": "https://ai-gateway.polymerquant.com/v1",
-          "contextWindow": 1050000,
+          "contextWindow": 1000000,
           "id": "gpt-5.6-luna",
           "input": [
             "text",
             "image"
           ],
           "maxTokens": 128000,
-          "name": "gpt-5.6-luna · Polymer AI Gateway ($0.22/$1.32 per 1M)",
+          "name": "gpt-5.6-luna · Polymer AI Gateway ($0.2/$1.2 per 1M)",
           "reasoning": true
         },
         {
@@ -529,7 +517,20 @@
             "image"
           ],
           "maxTokens": 128000,
-          "name": "gpt-6-astra · Polymer AI Gateway ($11/$55 per 1M)",
+          "name": "gpt-6-astra · Polymer AI Gateway ($10/$50 per 1M)",
+          "reasoning": true
+        },
+        {
+          "api": "openai-completions",
+          "baseUrl": "https://ai-gateway.polymerquant.com/v1",
+          "contextWindow": 1050000,
+          "id": "gpt-6-luna",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 128000,
+          "name": "gpt-6-luna · Polymer AI Gateway ($0.1/$0.5 per 1M)",
           "reasoning": true
         }
       ],
